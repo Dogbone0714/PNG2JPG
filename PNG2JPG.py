@@ -4,13 +4,14 @@ from tkinter import messagebox
 from PIL import Image
 
 root= tk.Tk()
-root.title("JPG To PNG By HHK")
+root.title("PNG To JPG By HHK")
 canvas1 = tk.Canvas(root, width=300, height=250, bg='lightsteelblue2', relief='raised')
 canvas1.pack()
 
 
 
-label1 = tk.Label(root, text='JPG To PNG Tool', bg='lightsteelblue2')
+label1 = tk.Label(root, text='
+ Tool', bg='lightsteelblue2')
 label1.config(font=('helvetica', 20))
 canvas1.create_window(150, 50, window=label1)
 
@@ -22,20 +23,20 @@ def getJPG():
     im1 = Image.open(import_file_path)
 
 
-browseButton_JPG = tk.Button(text="      Import   JPG   File     ", command=getJPG, bg='royalblue', fg='white',
+browseButton_PNG = tk.Button(text="      Import   PNG   File     ", command=getPNG, bg='royalblue', fg='white',
                              font=('helvetica', 12, 'bold'))
-canvas1.create_window(150, 120, window=browseButton_JPG)
+canvas1.create_window(150, 120, window=browseButton_PNG)
 
 
-def convertToPNG():
+def convertToJPG():
     global im1
 
-    export_file_path = filedialog.asksaveasfilename(defaultextension='.png')
+    export_file_path = filedialog.asksaveasfilename(defaultextension='.jpg')
     im1.save(export_file_path)
 
 
-saveAsButton_PNG = tk.Button(text=' Convert  JPG  To  PNG ', command=convertToPNG, bg='royalblue', fg='white',
+saveAsButton_JPG = tk.Button(text=' Convert  PNG To JPG ', command=convertToJPG, bg='royalblue', fg='white',
                              font=('helvetica', 12, 'bold'))
-canvas1.create_window(150, 180, window=saveAsButton_PNG)
+canvas1.create_window(150, 180, window=saveAsButton_JPG)
 
 root.mainloop()
