@@ -10,13 +10,12 @@ canvas1.pack()
 
 
 
-label1 = tk.Label(root, text='
- Tool', bg='lightsteelblue2')
+label1 = tk.Label(root, text='PNG To JPG Tool', bg='lightsteelblue2')
 label1.config(font=('helvetica', 20))
 canvas1.create_window(150, 50, window=label1)
 
 
-def getJPG():
+def getPNG():
     global im1
 
     import_file_path = filedialog.askopenfilename()
